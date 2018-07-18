@@ -1,0 +1,3 @@
+- service: deploy
+  command: /app/build-and-deploy.sh
+
