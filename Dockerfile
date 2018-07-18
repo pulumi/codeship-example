@@ -25,6 +25,9 @@ RUN apt-get update && \
 
 WORKDIR /app
 
+# Copy over the package.json and yarn.lock files and then install packages. By copying just these two files first
+# we get better docker caching behavior (as these layers only change with you add or remove dependencies, not when)
+# you do normal application development.
 COPY package.json yarn.lock ./
 RUN yarn install
 
