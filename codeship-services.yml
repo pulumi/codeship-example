@@ -1,11 +1,4 @@
 app:
   build:
-    dockerfile: .codeship/build/Dockerfile
-  volumes:
-    - .:/app
-deploy:
-  build:
-    dockerfile: .codeship/deploy/Dockerfile
-  volumes:
-    - .:/app
+    dockerfile: Dockerfile
   encrypted_env_file: env.encrypted
