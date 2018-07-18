@@ -1,3 +1,11 @@
-- service: deploy
-  command: /app/build-and-deploy.sh
-
+- service: app
+  tag: master
+  command: /app/deploy.sh update
+- service: app
+  tag: ^(staging|production)$
+  command: /app/deploy.sh preview
+- type: manual
+  tag: ^(staging|production)$
+  steps:
+      - service: app
+        command: /app/deploy.sh update --skip-preview
