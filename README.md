@@ -4,7 +4,7 @@ This repository demonstrates how to use [CodeShip Pro](https://codeship.com/feat
 
 ## Setting Up Pulumi for CodeShip Pro
 
-The [Dockerfile](./Dockerfile) describes how to build the environment CodeShip Pro will do our deployment in. Starting from the `node:8` base image, we add Pulumi as well as install Docker (since the Pulumi deployment will run `docker build` to build the container for part of our application). Because we use `docker` we need to ensure we add the `add_docker: true` directive in our `codeship-services.yml` file.
+The [`Dockerfile`](./Dockerfile) describes how to build the environment CodeShip Pro will do our deployment in. Starting from the `node:8` base image, we add Pulumi as well as install Docker (since the Pulumi deployment will run `docker build` to build the container for part of our application). Because we use `docker` we need to ensure we add the `add_docker: true` directive in our `codeship-services.yml` file.
 
 In addition to the container, we need some environment variaibles present at deployment time. The ones we care about are:
 
